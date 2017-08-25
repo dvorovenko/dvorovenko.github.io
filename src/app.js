@@ -12,6 +12,7 @@ import {
 } from './scripts/config';
 import router from './api';
 import { koaErrorReporter } from './errorHandler';
+import { connect } from './db';
 
 const debug = require('debug')('night:server');
 
@@ -32,8 +33,11 @@ app.use(morgan(REQUEST_LOGGER_MODE));
 
 export const listen = done => {
   debug(`Starting Night App in '${NODE_ENV}' mode...`);
-  return app.listen(PORT, conErr => {
-    if (conErr) return done(conErr);
-    debug(`Night API listening on 'localhost:${PORT}'`);
+  return connect(dbErr => {
+    if (dbErr) return done(dbErr);
+    return app.listen(PORT, conErr => {
+      if (conErr) return done(conErr);
+      debug(`Night API listening on 'localhost:${PORT}'`);
+    });
   });
 };

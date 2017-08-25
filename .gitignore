@@ -1,5 +1,8 @@
-.idea
-.DS_Store
-build
-.gitignore
+package-lock.json
+markup/package-lock.json
+markup/build
 markup/node_modules
+.DS_Store
+node_modules
+*.log
+.idea

@@ -61,6 +61,8 @@ app.prepare()
       ctx.respond = false
     })
 
+    server.use(router.routes());
+
     debug(`Starting Night App in '${NODE_ENV}' mode...`);
     server.listen(PORT, (err) => {
       if (err) throw err;

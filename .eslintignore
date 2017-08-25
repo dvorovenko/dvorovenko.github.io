@@ -1,0 +1,4 @@
+src/templates/*
+test/*
+src/index.js
+build/*

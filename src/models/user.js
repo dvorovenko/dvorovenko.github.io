@@ -30,4 +30,15 @@ UserSchema.virtual('id').set((value) => {
   this._id = value;
 });
 
+UserSchema.options.toJSON = {
+  transform: (doc, result) => {
+    const ret = result;
+    ret.id = ret._id.toString();
+    if (ret.creation_date) {
+      ret.creation_date = ret.creation_date.toISOString()
+    }
+    return _.pick(ret, ['name', 'login', 'avatar', 'location', 'rank', 'email', 'creation_date', 'followers'])
+  }
+}
+
 export default mongoose.model('User', UserSchema);

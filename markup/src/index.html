@@ -7,13 +7,147 @@
 </head>
 <body>
 <div class="l_root">
-    <div class="l_ page">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #0070c9;
+        }
+        html, body, .l_root {
+            width: 100%;
+            height: 100%;
+            min-width: 800px;
+            min-height: 500px;
+        }
+        .l_root {
+            background: #c7c4cb;
+            font-family: 'Helvetica Neue';
+            color: #555;
+        }
+        .l_page {
+            width: 100%;
+            height: 100%;
+            display: none;
+            text-align: center;
+        }
+        .m_active_page {
+            display: block;
+        }
+        .m_text_align {
+            text-align: center;
+        }
+        .b_form {
+            margin: 20% 0;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        .b_form .title {
+            color: #333;
+            font-size: 36px;
+        }
+        .b_form .text {
+            background-color: #fff;
+            border: 1px solid #c7c4cb;
+            outline: 0;
+            padding: 0 35px 0 20px;
+            font-size: 21px;
+            height: 52px;
+            width: 550px;
+            border-radius: 3px;
+        }
+        .b_form .submit {
+            background: transparent;
+            height: 52px;
+            width: 52px;
+            margin-left: -52px;
+        }
+    </style>
+
+    <div class="l_page m_active_page m_text_align">
         <form action="" class="b_form">
-            <input type="text" class="text">
-            <input type="submit" class="submit">
+            <div class="title">Insert your Github name</div>
+            <input placeholder="dvorovenko" type="text" class="text">
+            <button type="submit" class="submit">
+                <svg height="32px" version="1.1" viewBox="0 0 32 32" width="32px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g fill="#777777" id="icon-111-search"><path d="M19.4271164,20.4271164 C18.0372495,21.4174803 16.3366522,22 14.5,22 C9.80557939,22 6,18.1944206 6,13.5 C6,8.80557939 9.80557939,5 14.5,5 C19.1944206,5 23,8.80557939 23,13.5 C23,15.8472103 22.0486052,17.9722103 20.5104077,19.5104077 L26.5077736,25.5077736 C26.782828,25.782828 26.7761424,26.2238576 26.5,26.5 C26.2219324,26.7780676 25.7796227,26.7796227 25.5077736,26.5077736 L19.4271164,20.4271164 L19.4271164,20.4271164 Z M14.5,21 C18.6421358,21 22,17.6421358 22,13.5 C22,9.35786417 18.6421358,6 14.5,6 C10.3578642,6 7,9.35786417 7,13.5 C7,17.6421358 10.3578642,21 14.5,21 L14.5,21 Z" id="search"/></g></g></svg>
+            </button>
         </form>
     </div>
-    .b_profilr
+    <div class="l_page">
+        <div class="b_profile">
+            <img src="https://api.github.com/users/dvorovenko" alt="" class="avatar">
+            <div class="login">dvorovenko</div>
+            <div class="names">Dvorovenko Yaroslav</div>
+            <div class="location">Urkaine<img class="flag" src="https://flagpedia.net/data/flags/normal/ua.png" /></div>
+            <div class="email">crazyfan1993@gmail.com</div>
+            <div class="creation_date">2014-10-27T12:44:21Z</div>
+            <div class="followers">4</div>
+        </div>
+    </div>
+
+    <div class="l_page">
+        <div class="b_leader_board">
+            <div class="btn">Sort by rank</div>
+            <table class="table">
+                <thead>
+                <th>
+                <td class="rank">Rank</td>
+                <td class="person">Person</td>
+                <td class="country">Country</td>
+                <td class="followers">Followers</td>
+                <td class="commits">Commits</td>
+                </th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="rank">1</td>
+                    <td class="person">
+                        Dvorovenko Yaroslav
+                        <div class="nick">@dvorovenko</div>
+                    </td>
+                    <td class="country">Ukraine</td>
+                    <td class="followers">4</td>
+                    <td class="commits">1</td>
+                </tr>
+                <tr>
+                    <td class="rank">1</td>
+                    <td class="person">
+                        Dvorovenko Yaroslav
+                        <div class="nick">@dvorovenko</div>
+                    </td>
+                    <td class="country">Ukraine</td>
+                    <td class="followers">4</td>
+                    <td class="commits">1</td>
+                </tr>
+                <tr>
+                    <td class="rank">1</td>
+                    <td class="person">
+                        Dvorovenko Yaroslav
+                        <div class="nick">@dvorovenko</div>
+                    </td>
+                    <td class="country">Ukraine</td>
+                    <td class="followers">4</td>
+                    <td class="commits">1</td>
+                </tr>
+                <tr>
+                    <td class="rank">1</td>
+                    <td class="person">
+                        Dvorovenko Yaroslav
+                        <div class="nick">@dvorovenko</div>
+                    </td>
+                    <td class="country">Ukraine</td>
+                    <td class="followers">4</td>
+                    <td class="commits">1</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 </body>
 </html>

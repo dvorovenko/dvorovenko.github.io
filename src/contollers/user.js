@@ -39,7 +39,15 @@ export default {
 
   async delete(req, res, next) {
     try {
-
+      if (req.body.id) {
+        if (!is.objectId(req.body.id)) throw new HError(400, 'invalid_parameter', 'Invalid parameter');
+      }
+      const user = await User.findOne({ _id: req.body.id })
+      if (!user) {
+        throw new NError(404, 'not_found', 'User not found');
+      }
+      await user.delegate();
+      // Render component as true
     } catch (err) {
       return next(err);
     }

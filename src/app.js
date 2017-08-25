@@ -14,6 +14,7 @@ import {
 import router from './api';
 import { koaErrorReporter } from './errorHandler';
 import { connect } from './db';
+import Router from 'koa-router';
 
 const debug = require('debug')('night:server');
 

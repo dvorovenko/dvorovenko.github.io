@@ -1,5 +1,3 @@
-var React = require('react');
-
 export default () => (
   <div className="l_root">
     <div className="l_page m_active_page m_text_align">

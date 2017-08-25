@@ -24,6 +24,10 @@ export const UserSchema = Schema({
   email: String,
   creation_date: Date,
   followers: String,
-
 });
 
+UserSchema.virtual('id').set((value) => {
+  this._id = value;
+});
+
+export default mongoose.model('User', UserSchema);

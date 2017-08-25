@@ -1,5 +1,9 @@
 package-lock.json
+markup/package-lock.json
+markup/build
+markup/node_modules
 .DS_Store
 node_modules
 *.log
 .idea
+.next

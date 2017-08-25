@@ -10,7 +10,7 @@ import {
   NODE_ENV,
   PORT
 } from './scripts/config';
-// import { koaErrorReporter } from './errorHandler';
+import { koaErrorReporter } from './errorHandler';
 
 const debug = require('debug')('night:server');
 
@@ -23,7 +23,7 @@ app.use(
   })
 );
 
-// app.use(koaErrorReporter);
+app.use(koaErrorReporter);
 app.use(helmet());
 app.use(compress());
 app.use(morgan(REQUEST_LOGGER_MODE));
@@ -40,6 +40,7 @@ app.use(async ctx => {
 });
 
 export const listen = done => {
+  debug(`Starting Night App in '${NODE_ENV}' mode...`);
   return app.listen(PORT, conErr => {
     if (conErr) return done(conErr);
     debug(`Night API listening on 'localhost:${PORT}'`);

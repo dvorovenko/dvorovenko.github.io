@@ -10,6 +10,7 @@ import {
   NODE_ENV,
   PORT
 } from './scripts/config';
+import router from './api';
 import { koaErrorReporter } from './errorHandler';
 
 const debug = require('debug')('night:server');
@@ -24,20 +25,10 @@ app.use(
 );
 
 app.use(koaErrorReporter);
+app.use(router());
 app.use(helmet());
 app.use(compress());
 app.use(morgan(REQUEST_LOGGER_MODE));
-
-const aliveAt = new Date();
-
-app.use(async ctx => {
-  ctx.body = {
-    alive: true, // Static value to ensure response integrity
-    aliveAt: aliveAt.toString(), // Used to calculate roll-out times
-    timestamp: new Date().toString(), // Is the system clock in sync?
-    instance: process.env.HOSTNAME // Who is responding?
-  };
-});
 
 export const listen = done => {
   debug(`Starting Night App in '${NODE_ENV}' mode...`);

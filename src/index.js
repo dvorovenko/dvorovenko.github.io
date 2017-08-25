@@ -1,5 +1,5 @@
 import { listen } from './app';
-// import { reportError } from './errorHandler';
+import { reportError } from './errorHandler';
 
 listen(err => {
   if (err) reportError(err);

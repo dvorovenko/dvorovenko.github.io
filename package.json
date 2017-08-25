@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "development": "cross-env NODE_ENV=development DEBUG=night* nodemon --exec babel-node src/index.js",
-    "dev": "next",
+    "dev": "cross-env NODE_ENV=development DEBUG=night* nodemon --exec babel-node src/app.js",
+    "build": "next build",
     "test": "mocha --recursive test/",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix"
@@ -36,6 +37,12 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-plugin-transform-builtin-extend": "^1.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-regenerator": "^6.14.0",
+    "babel-plugin-webpack-alias": "^1.8.1",
+    "babel-preset-react-hmre": "^1.1.1",
     "cross-env": "^5.0.5",
     "eslint": "^4.4.0",
     "eslint-plugin-prettier": "^2.1.2",

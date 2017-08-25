@@ -1,0 +1,14 @@
+{
+  "presets": ["es2015", "stage-3", "stage-0", "react"],
+  "plugins": [
+    [ "transform-decorators-legacy", "transform-regenerator"],
+    ["transform-builtin-extend", {
+      "globals": ["Error"]
+    }]
+  ],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}

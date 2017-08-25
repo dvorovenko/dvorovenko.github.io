@@ -1,7 +1,13 @@
 import Router from 'koa-router';
+import { handle } from "../app";
 
 export const router = new Router();
 const aliveAt = new Date();
+
+router.get('*', async ctx => {
+  await handle(ctx.req, ctx.res);
+  ctx.respond = false
+});
 
 router.get('/', async (ctx, next) => {
   ctx.body = {

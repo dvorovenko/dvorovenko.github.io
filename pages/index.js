@@ -41,7 +41,7 @@ export default () => (
       }
       .l_root {
           background: #c7c4cb;
-          font-family: 'Helvetica Neue';
+          font-family: Helvetica Neue';
           color: #555;
       }
       .l_page {

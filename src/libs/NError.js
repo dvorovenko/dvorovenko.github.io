@@ -5,14 +5,14 @@ import ExtendableError from 'es6-error';
  * @extends Error
  *
  * @example
- * new PError(404, 'NotFound', 'Required property not found: name')
+ * new NError(404, 'NotFound', 'Required property not found: name')
  * // Returns:
  * // PError {
  * //  status: 404,
  * //  code: 'NotFound',
  * //  meta: 'Required property not found: name',
  * // }
- * // PError also has a 'stack' and 'toJSON' methods as a normal Error
+ * // NError also has a 'stack' and 'toJSON' methods as a normal Error
  */
 export default class NError extends ExtendableError {
   /**

@@ -44,7 +44,6 @@ app.prepare()
 
     router.get('/users/list', UserController.list);
     router.get('/users/:id', async ctx => {
-
       await app.render(ctx.req, ctx.res, '/b', ctx.query)
       ctx.respond = false
     });

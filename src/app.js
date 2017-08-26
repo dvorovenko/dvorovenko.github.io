@@ -14,6 +14,7 @@ import {
 import router from './api';
 import { koaErrorReporter } from './errorHandler';
 import { connect } from './db';
+import db from './db';
 import Router from 'koa-router';
 
 const debug = require('debug')('night:server');
@@ -56,6 +57,9 @@ app.prepare()
     debug(`Starting Night App in '${NODE_ENV}' mode...`);
     server.listen(PORT, (err) => {
       if (err) throw err;
-      debug(`Night APP listening on 'localhost:${PORT}'`);
+      return db.connect((dbErr) => {
+        if (dbErr) return done(dbErr);
+        debug(`Night APP listening on 'localhost:${PORT}'`);
+      });
     })
   });

@@ -43,7 +43,11 @@ app.prepare()
     const router = new Router();
 
     router.get('/users/list', UserController.list);
-    router.get('/users/:id', UserController.get);
+    router.get('/users/:id', async ctx => {
+
+      await app.render(ctx.req, ctx.res, '/b', ctx.query)
+      ctx.respond = false
+    });
     router.post('/users', UserController.post);
     router.delete('/users/:id', UserController.delete);
 

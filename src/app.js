@@ -16,6 +16,7 @@ import { koaErrorReporter } from './errorHandler';
 import { connect } from './db';
 import db from './db';
 import Router from 'koa-router';
+import UserController from './contollers/user';
 
 const debug = require('debug')('night:server');
 
@@ -39,13 +40,12 @@ app.prepare()
     server.use(compress());
     server.use(morgan(REQUEST_LOGGER_MODE));
 
-    const router = new Router()
+    const router = new Router();
 
-    router.get('/users', async ctx => {
-      ctx.body = 'Ololwfkan';
-      // await app.render(ctx.req, ctx.res, '/a', ctx.query)
-      // ctx.resspond = false
-    })
+    router.get('/users/list', UserController.list);
+    router.get('/users/:id', UserController.get);
+    router.post('/users', UserController.post);
+    router.delete('/users/:id', UserController.delete);
 
     router.get('*', async ctx => {
       await handle(ctx.req, ctx.res)

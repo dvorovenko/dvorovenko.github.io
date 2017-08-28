@@ -53,6 +53,9 @@
         .m_text_align {
             text-align: center;
         }
+        .m_left_align{
+          text-align: left;
+        }
         .b_form {
             margin: 15% 0;
             display: inline-block;
@@ -91,9 +94,110 @@
             cursor: pointer;
             opacity: 0.7;
         }
+
+        .b_profile{
+          margin: 15% 0;
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+        }
+        .b_profile .avatar{
+          margin: 0 auto 20px;
+          border-radius: 4px;
+          height: 200px;
+          width: 200px;
+          object-fit: cover;
+        }
+        .b_profile .names{
+          display: inline-block;
+          font-size: 28px;
+          line-height:30px;
+          vertical-align: middle;
+          margin-bottom: 20px;
+        }
+        .b_profile .location{
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 0 12px 20px;
+        }
+        .flag{
+          height: 15px;
+          width: 25px;
+          border-radius: 3px;
+          object-fit: cover;
+
+        }
+        .b_profile .login{
+          font-size: 24px;
+          line-height:30px;
+          vertical-align: middle;
+          margin-bottom: 20px;
+        }
+        .b_profile .email{
+          display: inline-block;
+          line-height:30px;
+          vertical-align: middle;
+          margin-right: 30px;
+        }
+        .b_profile .creation_date{
+          display: inline-block;
+          line-height:30px;
+          vertical-align: middle;
+          margin-right: 30px;
+        }
+        .b_profile .followers{
+          display: inline-block;
+          line-height:30px;
+          vertical-align: middle;
+        }
+
+        .b_leader_board{
+          margin: 2% 0;
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          font-size: 24px;
+        }
+
+      .b_leader_board .table {
+        width:1000px;
+        margin: 0 auto;
+      }
+      .b_leader_board .table .country{
+        vertical-align: middle;
+      }
+      .b_leader_board .table .avatar{
+        height: 50px;
+        width: 50px;
+        margin-bottom: -30px;
+        margin-right: 50px;
+        border-radius: 4px;
+      }
+      .b_leader_board .table .rank{
+        height:80px;
+      }
+      .b_leader_board .table .rank{
+        width: 5%;
+      }
+      .b_leader_board .table .person{
+        width:50%;
+      }
+      .b_leader_board .table .person .nick{
+        display: block;
+        margin-left: 20px;
+      }
+        .b_leader_board .table .location{
+        width: 15%;
+      }
+      .b_leader_board .table .followers{
+        width: 15%;
+      }
+      .b_leader_board .table .commits{
+        width: 15px;
+      }
     </style>
 
-    <div class="l_page m_active_page m_text_align">
+    <div class="l_page  m_text_align">
         <form action="" class="b_form">
             <div class="title">Insert your Github name</div>
             <input placeholder="dvorovenko" type="text" class="text">
@@ -102,30 +206,28 @@
             </button>
         </form>
     </div>
-    <div class="l_page">
+    <div class="l_page ">
         <div class="b_profile">
-            <img src="https://api.github.com/users/dvorovenko" alt="" class="avatar">
-            <div class="login">dvorovenko</div>
-            <div class="names">Dvorovenko Yaroslav</div>
-            <div class="location">Urkaine<img class="flag" src="https://flagpedia.net/data/flags/normal/ua.png" /></div>
-            <div class="email">crazyfan1993@gmail.com</div>
-            <div class="creation_date">2014-10-27T12:44:21Z</div>
-            <div class="followers">4</div>
+          <img  src="https://api.github.com/users/dvorovenko" alt="" class="avatar"><br>
+          <div class="names">Dvorovenko Yaroslav</div>
+          <div class="location"><img class="flag" src="https://flagpedia.net/data/flags/normal/ua.png" /></div>
+          <div class="login">dvorovenko</div>
+          <div class="email">crazyfan1993@gmail.com</div>
+          <div class="creation_date">2014-10-27T12:44:21Z</div>
+          <div class="followers">4</div>
         </div>
     </div>
 
-    <div class="l_page">
+    <div class="l_page m_active_page" >
         <div class="b_leader_board">
             <div class="btn">Sort by rank</div>
             <table class="table">
                 <thead>
-                <th>
                 <td class="rank">Rank</td>
                 <td class="person">Person</td>
                 <td class="country">Country</td>
                 <td class="followers">Followers</td>
                 <td class="commits">Commits</td>
-                </th>
                 </thead>
                 <tbody>
                 <tr>
@@ -134,33 +236,14 @@
                         Dvorovenko Yaroslav
                         <div class="nick">@dvorovenko</div>
                     </td>
-                    <td class="country">Ukraine</td>
+                    <td class="country">Ukraine<img class="flag" src="https://flagpedia.net/data/flags/normal/ua.png" /></td>
                     <td class="followers">4</td>
                     <td class="commits">1</td>
                 </tr>
                 <tr>
                     <td class="rank">1</td>
                     <td class="person">
-                        Dvorovenko Yaroslav
-                        <div class="nick">@dvorovenko</div>
-                    </td>
-                    <td class="country">Ukraine</td>
-                    <td class="followers">4</td>
-                    <td class="commits">1</td>
-                </tr>
-                <tr>
-                    <td class="rank">1</td>
-                    <td class="person">
-                        Dvorovenko Yaroslav
-                        <div class="nick">@dvorovenko</div>
-                    </td>
-                    <td class="country">Ukraine</td>
-                    <td class="followers">4</td>
-                    <td class="commits">1</td>
-                </tr>
-                <tr>
-                    <td class="rank">1</td>
-                    <td class="person">
+                      <img src="https://flagpedia.net/data/flags/normal/ua.png" alt="" class="avatar">
                         Dvorovenko Yaroslav
                         <div class="nick">@dvorovenko</div>
                     </td>
